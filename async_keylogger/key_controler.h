@@ -142,10 +142,9 @@ void key_translate(char* stroke, unsigned vk) {
 			strcpy(stroke, "[INS]");
 			break;
 		// misc - end
-
 		default:
 			if IS_ALNUM(vk) {
-				stroke[0] = char(vk);		// translate from ASCII num
+				stroke[0] = (char)vk;		// translate from ASCII num
 				stroke[1] = 0x00;
 			} else {
 				sprintf(stroke, "[%#02x]", vk);	// unknown, log the VK

